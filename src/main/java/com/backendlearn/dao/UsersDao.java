@@ -31,8 +31,8 @@ public class UsersDao implements UsersSqlQueries {
 	}
 
 	public Integer insertData(Users users) {
-		int insertedRows = jdbcTemplateObj.update(INSERTQUERY, users.getName(), users.getAbout(), users.getEmail(),
-				users.getPassword());
+		int insertedRows = jdbcTemplateObj.update(INSERTQUERY,new Object[] { users.getName(), users.getAbout(), users.getEmail(),
+				users.getPassword()});
 
 		return insertedRows;
 	}
@@ -70,7 +70,7 @@ public class UsersDao implements UsersSqlQueries {
 	public Integer getuserid(String name)
 	{
 		
-		return jdbcTemplateObj.queryForObject("select id from users where user_name=?",new Object[] {name},Integer.class);
+		return jdbcTemplateObj.queryForObject(GET_ID_OF_USER,new Object[] {name},Integer.class);
 		
 	}
 

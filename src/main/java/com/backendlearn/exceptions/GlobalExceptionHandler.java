@@ -3,6 +3,7 @@ package com.backendlearn.exceptions;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -43,5 +44,19 @@ public class GlobalExceptionHandler extends RuntimeException{
 		
 		return response;
 	}
+	
+	@ExceptionHandler(EmptyResultDataAccessException.class)
+	public Response emptyResultDataAccessException(EmptyResultDataAccessException e)
+	{
+		Response response =new Response();
+		response.setMessage("Data Not Found");
+		response.setState(false);
+		response.setObject(e);
+		return response;
+		
+		
+	}
+	
+	
 	
 }
