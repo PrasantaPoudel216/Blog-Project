@@ -42,14 +42,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
 		// bearer dlfa6464
 
-		String requestToken=token.substring(7);
-		System.out.println(requestToken);
+		
+		
 
 		String userName = null;
 		String password = null;
+		String requestToken=null;
 
 		if (request != null && token.startsWith("bearer")) {
-
+			requestToken=token.substring(7);
 			try {
 
 				

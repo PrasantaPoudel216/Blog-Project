@@ -54,37 +54,37 @@ public class BackendlearnApplication  implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("i runned man");
-		
-		PasswordEncoder passw=PasswordEncoderFactories.createDelegatingPasswordEncoder();
-		System.out.println("first hash"+passw.encode("Password"));
-		
-		String hash=pass.encode("Password");
-		System.out.println("ukpass"+hash);
-		
-		UserDetails user=User.withDefaultPasswordEncoder().username("ram").password("password").roles("admin").build();
-		System.out.println(user.getPassword());
-	
-		
-		String idForEncode = "bcrypt";
-		Map encoders = new HashMap<>();
-		encoders.put(idForEncode, new BCryptPasswordEncoder());
-//		encoders.put("noop", NoOpPasswordEncoder.getInstance());
-//		encoders.put("pbkdf2", Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_5());
-//		encoders.put("pbkdf2@SpringSecurity_v5_8", Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8());
-//		encoders.put("scrypt", SCryptPasswordEncoder.defaultsForSpringSecurity_v4_1());
-//		encoders.put("scrypt@SpringSecurity_v5_8", SCryptPasswordEncoder.defaultsForSpringSecurity_v5_8());
-//		encoders.put("argon2", Argon2PasswordEncoder.defaultsForSpringSecurity_v5_2());
-//		encoders.put("argon2@SpringSecurity_v5_8", Argon2PasswordEncoder.defaultsForSpringSecurity_v5_8());
-		encoders.put("sha256", new StandardPasswordEncoder());
-
-		PasswordEncoder passwordEncoders =
-		    new MessageDigestPasswordEncoder("MD5");
-		System.out.println(passwordEncoders.encode("Password"));
-
-		
-
-		
+//		System.out.println("i runned man");
+//		
+//		PasswordEncoder passw=PasswordEncoderFactories.createDelegatingPasswordEncoder();
+//		System.out.println("first hash"+passw.encode("Password"));
+//		
+//		String hash=pass.encode("Password");
+//		System.out.println("ukpasss"+hash);
+//		
+//		UserDetails user=User.withDefaultPasswordEncoder().username("ram").password("password").roles("admin").build();
+//		System.out.println(user.getPassword());
+//	
+//		
+//		String idForEncode = "bcrypt";
+//		Map encoders = new HashMap<>();
+//		encoders.put(idForEncode, new BCryptPasswordEncoder());
+////		encoders.put("noop", NoOpPasswordEncoder.getInstance());
+////		encoders.put("pbkdf2", Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_5());
+////		encoders.put("pbkdf2@SpringSecurity_v5_8", Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8());
+////		encoders.put("scrypt", SCryptPasswordEncoder.defaultsForSpringSecurity_v4_1());
+////		encoders.put("scrypt@SpringSecurity_v5_8", SCryptPasswordEncoder.defaultsForSpringSecurity_v5_8());
+////		encoders.put("argon2", Argon2PasswordEncoder.defaultsForSpringSecurity_v5_2());
+////		encoders.put("argon2@SpringSecurity_v5_8", Argon2PasswordEncoder.defaultsForSpringSecurity_v5_8());
+//		encoders.put("sha256", new StandardPasswordEncoder());
+//
+//		PasswordEncoder passwordEncoders =
+//		    new MessageDigestPasswordEncoder("MD5");
+//		System.out.println(passwordEncoders.encode("Password"));
+//
+//		
+//
+//		
 		
 		
 
